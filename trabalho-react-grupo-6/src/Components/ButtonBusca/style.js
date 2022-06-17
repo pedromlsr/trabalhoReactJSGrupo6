@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.button `
+export const Container = styled.input `
     display: flex;
     width: 40px;
     height: 40px;
@@ -10,11 +10,13 @@ export const Container = styled.button `
     justify-content: center;
     margin: 1rem;
     background-color: #FFB84F;
-    box-shadow: 2px 2px 4px 1px #00000025, 
-        inset 2px 2px 4px 0px #fff, 
-        inset -2px -2px 4px 0px #00000025;
+    box-shadow: 2px 2px 4px 1px #fff, 
+        inset 2px 2px 4px 0px #00000025, 
+        inset -1px -1px 4px 0px #ffffff25;
     cursor: pointer;
-    &:hover {
-        background-color: #faae3e;
+    transition: width 0.4s ease-in-out;
+    &:focus {
+       width: 30rem;
+       border-radius: 50px;
     }
 `
