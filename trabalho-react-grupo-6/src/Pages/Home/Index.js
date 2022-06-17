@@ -1,10 +1,12 @@
 import React from "react";
-import { DataContext } from "../../Context/data";
+import { Reset } from "styled-reset";
+import { BannerInfoCompras } from "../../Components/BannerInfoCompras/Index";
 
 export const Home = () => {
     return (
         <>
-        <h1></h1>
+            <Reset/>
+            <BannerInfoCompras/>
         </>
     )
 }
