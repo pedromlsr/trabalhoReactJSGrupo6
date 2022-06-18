@@ -22,6 +22,12 @@ export const CardArea = styled.div`
   height: 80% ;  
 }
 
+img {
+  width:100%;
+  height:100% ;
+  border-radius: 1rem ;
+}
+
 button {
   border: none ; 
   height: 20% ;
