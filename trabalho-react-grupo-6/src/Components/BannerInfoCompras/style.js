@@ -19,8 +19,8 @@ export const Div = styled.div`
 `
 
 export const Icon = styled.img`
-   width: 120px;
-   height: 120px;
+   width: 8rem;
+   height: 8rem;
 `
 
 export const Sep = styled.div`
