@@ -29,17 +29,6 @@ export const ContainerInterno = styled.div `
     align-items: flex-start;
 `;
 
-export const InputNome = styled.input `
-    height: 2.5rem;
-    width: 40.6rem;
-    border-radius: 10px;
-    border: 2px solid #2b2e51;
-    margin: 0.1rem;
-    &:focus {
-        border: 4px solid #f7b048;
-    }
-`
-
 export const Input = styled.input `
     height: 2.5rem;
     width: 20rem;
@@ -48,5 +37,18 @@ export const Input = styled.input `
     margin: 0.1rem;
     &:focus {
         border: 4px solid #f7b048;
+    }
+`
+
+export const InputButton = styled.input `
+    cursor: pointer;
+    background-color: #ee7057;
+    height: 2rem;
+    width: 10rem;
+    border-radius: 10px;
+    border: 2px solid #2b2e51;
+    margin: 1rem;
+    &:hover {
+    background-color: #f7b048;
     }
 `
