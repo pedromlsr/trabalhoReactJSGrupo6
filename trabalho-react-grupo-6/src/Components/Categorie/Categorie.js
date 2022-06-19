@@ -2,21 +2,19 @@ import React, { useEffect, useState } from "react";
 import { CategorieArea } from "./Styles";
 import { ModelCard } from "../Card/Card"
 import { CategorieTitleContainer } from "../CategorieTitle/CategorieTitle";
-import { categorias } from "../../JsonTest/GetCategoria";
 import { api } from "../../Service/api"
 
 export const CategorieContainer = () => {
 
-  // const [categorias, setCategorias] = useState([]);
+  const [categorias, setCategorias] = useState([]);
 
-  // useEffect(()=>{
-  //   const getData = async()=>{
-  //     const response = await api.get('categoria');
-  //     setCategorias(response.data)
-  //   }
-  //   getData()
-  // },[categorias])
-  const categoriasApi = categorias;
+  useEffect(()=>{
+    const getData = async()=>{
+      const response = await api.get('categoria');
+      setCategorias(response.data)
+    }
+    getData()
+  },[categorias])  
 
   function verificarQtdProdutos(itemCat) {
 
@@ -40,7 +38,7 @@ export const CategorieContainer = () => {
   }
 
   return (
-    categoriasApi?.map((itemCat) => itemCat.produtoList.length !== 0 && (
+    categorias?.map((itemCat) => itemCat.produtoList.length !== 0 && (
       <CategorieArea>
         <CategorieTitleContainer title={itemCat.nomeCategoria} />
         {verificarQtdProdutos(itemCat)}
