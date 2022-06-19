@@ -8,6 +8,7 @@ document.title = "Cadastro de Cliente"
 export const CadastroCliente = () => {
   return (
     <>
+      <NavBar/>
       <FormularioCliente/>
     </>
   );

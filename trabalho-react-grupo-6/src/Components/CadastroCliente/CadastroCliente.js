@@ -27,15 +27,23 @@ export const FormularioCliente = () => {
     e.preventDefault();
 
     const cliente = {email, nomeCompleto, cpf, telefone, dataNascimento, cep, numero, complemento}
-    const postCliente = async (cliente) => {
-      await api.post(`ecommerce/cliente`, cliente);
-    }
-    postCliente(cliente)
+      const postCliente = async (cliente) => {
+        await api.post(`ecommerce/cliente`, cliente);
+      }
+      postCliente(cliente)
+      
+      setNomeCompleto("")
+      setCpf("")
+      setDataNascimento("")
+      setTelefone("")
+      setEmail("")
+      setCep("")
+      setNumero("")
   };
 
   return (
     <Container>
-      <Formulario onSubmit={handleSubmit}>
+      <Formulario onSubmit={handleSubmit} method="post">
         <Titulo>NOVO CADASTRO</Titulo>
         <ContainerInterno>
         <Input
@@ -107,7 +115,7 @@ export const FormularioCliente = () => {
         * Campos obrigatórios
         <ContainerInterno>
           <InputButton type="submit" value="Cadastrar"/>
-          <InputButton type="reset" value="Limpar"/>
+          {/* <InputButton type="reset" value="Limpar"/> */}
         </ContainerInterno>
       </Formulario>
     </Container>
