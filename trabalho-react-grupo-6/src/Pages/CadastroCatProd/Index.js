@@ -1,45 +1,40 @@
 import { useState } from 'react'
 import { Form } from './style';
-import { api } from '../../Service/api'
+import { apiCategoria } from '../../Service/api-categoria';
+import { apiProduto } from '../../Service/api-produto';
 
 export const CadastroCadProd = () => {
-   const [catOuProd, setCatOuProd] = useState('')
+   const [request, setRequest] = useState('')
 
    const [nomeCategoria, setNomeCategoria] = useState('')
    const [descricaoCategoria, setDescricaoCategoria] = useState('')
 
    const [nomeProduto, setNomeProduto] = useState('')
    const [descricaoProduto, setDescricaoProduto] = useState('')
-   const [qtdEstoque, setqtdEstoque] = useState()
-   const [valorUnitario, setValorUnitario] = useState()
-   const [idCategoria, setIdCategoria] = useState()
+   const [qtdEstoque, setqtdEstoque] = useState('')
+   const [valorUnitario, setValorUnitario] = useState('')
+   const [idCategoria, setIdCategoria] = useState('')
 
-   const handleSubmit = e => {
+   const handleSubmit = async (e) => {
       e.preventDefault()
 
-      if (catOuProd === 'categoria') {
+      if (request === 'saveCategoria') {
          const categoria = { nomeCategoria, descricaoCategoria }
-         const postCategoria = async (categoria) => {
-            await api.post('ecommerce/categoria', categoria)
-         }
-         postCategoria(categoria)
+         apiCategoria.saveCategoria(categoria)
       }
       
-      if (catOuProd === 'produto') {
+      if (request === 'saveProduto') {
          const produto = { nomeProduto, descricaoProduto, qtdEstoque, valorUnitario, idCategoria }
-         const postProduto = async (produto) => {
-            await api.post('ecommerce/produto', produto)
-         }
-         postProduto(produto)
+         apiProduto.saveProduto(produto)
       }
    }
 
-   const  definirForm = (defForm) => {
-      setCatOuProd(defForm)
+   const  definirRequest = (request) => {
+      setRequest(request)
    }
 
-   const formCatOuProd = (catOuProd) => {
-      if (catOuProd === 'categoria') {
+   const formCatOuProd = (request) => {
+      if (request === 'saveCategoria') {
          return (
             <Form onSubmit={handleSubmit}>
                <label>Nome da categoria:</label>
@@ -60,7 +55,7 @@ export const CadastroCadProd = () => {
          )
       }
 
-      if (catOuProd === 'produto') {
+      if (request === 'saveProduto') {
          return (
             <Form onSubmit={handleSubmit}>
             <label>Nome do produto:</label>
@@ -102,7 +97,7 @@ export const CadastroCadProd = () => {
          )
       }
 
-      if (catOuProd === '') {
+      if (request === '') {
          return (
             <h4>Escolha o que deseja cadastrar clicando em um dos botões acima</h4>
          )
@@ -111,10 +106,11 @@ export const CadastroCadProd = () => {
 
    return (
       <>
-         <button onClick={() => definirForm('categoria')}>Cadastrar categoria</button>
-         <button onClick={() => definirForm('produto')}>Cadastrar produto</button>
+         <button onClick={() => definirRequest('findAllCategorias')}>Listar categorias</button>
+         <button onClick={() => definirRequest('saveCategoria')}>Cadastrar nova categoria</button>
+         <button onClick={() => definirRequest('saveProduto')}>Cadastrar produto</button>
          <div>
-            {formCatOuProd(catOuProd)}
+            {formCatOuProd(request)}
          </div>
       </>   
    )
