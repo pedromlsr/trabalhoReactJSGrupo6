@@ -1,11 +1,12 @@
 import React from "react";
 import BannerPrincipal from "../../Components/BannerPrincipal/Index";
-import { DataContext } from "../../Context/data";
+import { BannerInfoCompras } from "../../Components/BannerInfoCompras/Index";
 
 export const Home = () => {
   return (
     <>
       <BannerPrincipal/>
+      <BannerInfoCompras/>
     </>
-  );
-};
+  )
+}
