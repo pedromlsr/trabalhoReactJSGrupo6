@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const CardArea = styled.div`
   display: flex ;
   flex-direction: column;
-  width:20%;
-  height:85% ;
+  width:250px;
+  height:300px ;
   background-color: #686DB1 ;
   border-radius: 2rem ;
   padding: 1rem ;

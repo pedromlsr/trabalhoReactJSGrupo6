@@ -1,6 +1,7 @@
 import React from "react";
 import { CardArea } from "./Styles";
 
+
 export const ModelCard = ({ imagem , nomeProduto }) => {
    return (
     <CardArea>
