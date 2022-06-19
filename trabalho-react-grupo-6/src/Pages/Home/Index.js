@@ -1,12 +1,12 @@
 import React from "react";
-import { Reset } from "styled-reset";
+import BannerPrincipal from "../../Components/BannerPrincipal/Index";
 import { BannerInfoCompras } from "../../Components/BannerInfoCompras/Index";
 
 export const Home = () => {
-    return (
-        <>
-            <Reset/>
-            <BannerInfoCompras/>
-        </>
-    )
+  return (
+    <>
+      <BannerPrincipal/>
+      <BannerInfoCompras/>
+    </>
+  )
 }
