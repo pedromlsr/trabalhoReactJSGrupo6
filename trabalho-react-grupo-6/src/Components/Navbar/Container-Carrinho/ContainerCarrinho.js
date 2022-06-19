@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Container, CarrinhoImg, Logo, Contador, Quantidade} from "./style";
+import { Container, CarrinhoImg, Logo, Contador, Quantidade } from "./style";
 
 import Carrinho from "../../../Assets/Icons/carrinho-de-compras.svg";
 
@@ -10,7 +10,9 @@ export const ContainerCarrinho = () => {
       <CarrinhoImg>
         <Logo src={Carrinho} />
       </CarrinhoImg>
-      <Contador><Quantidade>1</Quantidade></Contador>
+      <Contador>
+        <Quantidade>1</Quantidade>
+      </Contador>
     </Container>
   );
 };

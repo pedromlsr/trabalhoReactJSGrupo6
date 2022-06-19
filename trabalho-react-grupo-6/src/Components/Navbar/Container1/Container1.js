@@ -14,7 +14,7 @@ export const Container1 = (props) => {
         ></ButtonNav>
       </Link>
       <Link to="/cadastro-cliente">
-      <ButtonNav nome="Cadastre-se" cor="#EE7057"></ButtonNav>
+        <ButtonNav nome="Cadastre-se" cor="#EE7057"></ButtonNav>
       </Link>
       <ButtonNav nome="Área Interna" cor="#EE7057"></ButtonNav>
     </Container>

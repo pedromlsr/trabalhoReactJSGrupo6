@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import {api} from "../../Service/api";
+import { api } from "../../Service/api";
 
 import {
   Titulo,
@@ -12,33 +12,40 @@ import {
 } from "./style";
 
 export const FormularioCliente = () => {
-  
-  const [email, setEmail] = useState('')
-  const [nomeCompleto, setNomeCompleto] = useState('')
-  const [cpf, setCpf] = useState('')
-  const [telefone, setTelefone] = useState('')
-  const [dataNascimento, setDataNascimento] = useState('')
-  const [cep, setCep] = useState('')
-  const [numero, setNumero] = useState('')
-  const [complemento, setComplemento] = useState('')
-  
+  const [email, setEmail] = useState("");
+  const [nomeCompleto, setNomeCompleto] = useState("");
+  const [cpf, setCpf] = useState("");
+  const [telefone, setTelefone] = useState("");
+  const [dataNascimento, setDataNascimento] = useState("");
+  const [cep, setCep] = useState("");
+  const [numero, setNumero] = useState("");
+  const [complemento, setComplemento] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const cliente = {email, nomeCompleto, cpf, telefone, dataNascimento, cep, numero, complemento}
-      const postCliente = async (cliente) => {
-        await api.post(`ecommerce/cliente`, cliente);
-      }
-      postCliente(cliente)
-      
-      setNomeCompleto("")
-      setCpf("")
-      setDataNascimento("")
-      setTelefone("")
-      setEmail("")
-      setCep("")
-      setNumero("")
+    const cliente = {
+      email,
+      nomeCompleto,
+      cpf,
+      telefone,
+      dataNascimento,
+      cep,
+      numero,
+      complemento,
+    };
+    const postCliente = async (cliente) => {
+      await api.post(`ecommerce/cliente`, cliente);
+    };
+    postCliente(cliente);
+
+    setNomeCompleto("");
+    setCpf("");
+    setDataNascimento("");
+    setTelefone("");
+    setEmail("");
+    setCep("");
+    setNumero("");
   };
 
   return (
@@ -46,13 +53,13 @@ export const FormularioCliente = () => {
       <Formulario onSubmit={handleSubmit} method="post">
         <Titulo>NOVO CADASTRO</Titulo>
         <ContainerInterno>
-        <Input
-          type="text"
-          required
-          value={nomeCompleto}
-          onChange={(e) => setNomeCompleto(e.target.value)}
-          placeholder="Nome completo*"
-        />
+          <Input
+            type="text"
+            required
+            value={nomeCompleto}
+            onChange={(e) => setNomeCompleto(e.target.value)}
+            placeholder="Nome completo*"
+          />
           <Input
             type="text"
             required
@@ -60,8 +67,8 @@ export const FormularioCliente = () => {
             onChange={(e) => setCpf(e.target.value)}
             placeholder="CPF*"
           />
-            </ContainerInterno>
-            <ContainerInterno>
+        </ContainerInterno>
+        <ContainerInterno>
           <Input
             type="text"
             required
@@ -87,7 +94,6 @@ export const FormularioCliente = () => {
           />
           <Input type="email" placeholder="Confirme seu e-mail*" />
         </ContainerInterno>
-
         <Titulo>ENDEREÇO</Titulo>
         <Input
           type="text"
@@ -114,7 +120,7 @@ export const FormularioCliente = () => {
         </ContainerInterno>
         * Campos obrigatórios
         <ContainerInterno>
-          <InputButton type="submit" value="Cadastrar"/>
+          <InputButton type="submit" value="Cadastrar" />
           {/* <InputButton type="reset" value="Limpar"/> */}
         </ContainerInterno>
       </Formulario>

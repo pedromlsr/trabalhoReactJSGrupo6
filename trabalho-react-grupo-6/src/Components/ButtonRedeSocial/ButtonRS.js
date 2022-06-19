@@ -1,12 +1,11 @@
-import React from 'react';
+import React from "react";
 
-import { Container } from "./style";
+import { Container, Logo } from "./style";
 
 export const ButtonRS = (props) => {
-    
-    return (
-        <Container>
-            {props.logo}
-        </Container>
-    )
-}
+  return (
+    <Container>
+      <Logo>{props.logo}</Logo>
+    </Container>
+  );
+};
