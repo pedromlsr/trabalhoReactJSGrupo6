@@ -2,7 +2,7 @@ import { api } from "./api";
 
 const saveCategoria = async (categoria) => {
    try {
-      await api.post('ecommerce/categoria', categoria)
+      await api.post('categoria', categoria)
       alert('Categoria cadastrada com sucesso!')
    } catch (error) {
       console.log(error)

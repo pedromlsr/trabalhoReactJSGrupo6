@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ButtonNav } from "../../ButtonNavegacao/ButtonNav";
 
 import { Container } from "./style";
-export const Container1 = (props) => {
+export const Container1 = () => {
   return (
     <Container>
       <Link to="/">
@@ -16,7 +16,9 @@ export const Container1 = (props) => {
       <Link to="/cadastro-cliente">
         <ButtonNav nome="Cadastre-se" cor="#EE7057"></ButtonNav>
       </Link>
+      <Link to="/cadastro-cat-prod">
       <ButtonNav nome="Área Interna" cor="#EE7057"></ButtonNav>
+      </Link>    
     </Container>
   );
 };

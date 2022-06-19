@@ -35,7 +35,7 @@ export const FormularioCliente = () => {
       complemento,
     };
     const postCliente = async (cliente) => {
-      await api.post(`ecommerce/cliente`, cliente);
+      await api.post('cliente', cliente);
     };
     postCliente(cliente);
 
