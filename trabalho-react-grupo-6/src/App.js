@@ -10,8 +10,7 @@ function App() {
     <>
       <Contexto>
         <Root />
-        <CategorieContainer />
-        <CategorieContainer />
+        <CategorieContainer />        
       </Contexto>
     </>
   );
