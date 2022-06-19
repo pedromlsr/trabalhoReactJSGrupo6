@@ -14,7 +14,7 @@ export const CategorieContainer = () => {
       setCategorias(response.data)
     }
     getData()
-  },[categorias])  
+  },[])
 
   function verificarQtdProdutos(itemCat) {
 

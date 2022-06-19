@@ -7,7 +7,7 @@ export const CategorieArea=styled.div`
   justify-content: space-evenly;
   align-items: center ;
   height: 25rem;
-  padding: 2rem 0;
+  padding: 2rem;
 } 
 
 .CardsSlider {
@@ -20,7 +20,7 @@ export const CategorieArea=styled.div`
   overflow-x: scroll;
   scroll-snap-type: x mandatory ;
   height: 25rem;
-  padding: 2rem 0;
+  padding: 2rem;
   margin-bottom: 2rem ;
 }
 
