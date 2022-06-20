@@ -1,18 +1,26 @@
 import styled from 'styled-components';
 
 export const CardArea = styled.div`
-  display: flex ;
-  flex-direction: column;
   width:250px;
   height:300px ;
   background-color: #686DB1 ;
   border-radius: 2rem ;
   padding: 1rem ;
+  flex:none;
+  margin:0 1.3rem;
   &:hover{
     transform:scale(1.05);
     box-shadow:0.5rem 0.5rem 0.5rem #F7B048;
   }
   
+.content{
+  display: flex ;
+  justify-content: center ;
+  flex-direction: column ;
+  width:100%;
+  height:100% ;
+}
+
 .imagem {
   display:flex;
   justify-content: center;
@@ -25,6 +33,7 @@ export const CardArea = styled.div`
 img {
   width:100%;
   height:100% ;
+  object-fit: cover ;
   border-radius: 1rem ;
 }
 

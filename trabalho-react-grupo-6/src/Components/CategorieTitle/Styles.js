@@ -7,7 +7,7 @@ export const TitleArea = styled.div`
   padding: 0.5rem;
   background-color: #F7B048;
   color: #2B2E51;
-  font-size: 1.3rem;
+  font-size: 2rem;
   font-weight: 700;
   width:40%;
   border-radius:0 0.5rem 2rem 0 ;

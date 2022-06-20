@@ -2,13 +2,15 @@ import React from "react";
 import { CardArea } from "./Styles";
 
 
-export const ModelCard = ({ imagem , nomeProduto }) => {
-   return (
+export const ModelCard = ({ imagem, nomeProduto }) => {
+  return (
     <CardArea>
-      <div className="imagem">
-        <img src="" alt={nomeProduto} />
+      <div className="content">
+        <div className="imagem">
+          <img src={require(`../../Assets/ProductImg/${imagem}`)} alt={nomeProduto} />
+        </div>
+        <button>COMPRAR</button>
       </div>
-      <button>COMPRAR</button>
     </CardArea>
   )
 }

@@ -3,34 +3,33 @@ import styled from "styled-components";
 export const CategorieArea=styled.div`
 
 .CardsContainer {
-  display:flex;
-  justify-content: space-evenly;
+  display:flex;  
+  justify-content:center ;
   align-items: center ;
-  height: 25rem;
-  padding: 2rem;
+  height:30rem;
+  overflow-x: auto ;
 } 
-
-.CardsSlider {
-  display:grid;
-  grid-auto-flow: column ;
-  gap:3.5rem;
-  overflow-y:auto ;
-  overscroll-behavior-x:contain ;
-  align-items: center ;
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory ;
-  height: 25rem;
-  padding: 2rem;
-  margin-bottom: 2rem ;
-}
-
-.CardsSlider::-webkit-scrollbar{
+.CardsContainer::-webkit-scrollbar{
   background-color: #141529;
   height:0.5rem ;  
   }
   
-.CardsSlider::-webkit-scrollbar-thumb{
+.CardsContainer::-webkit-scrollbar-thumb{
   background-color:  #686DB1;
   border-radius:1rem ; 
   }
+
+.buttons {
+  width:100%;
+  text-align: center ;
+}
+
+.buttons button{
+  background-color: transparent ;
+  border: none;
+  cursor: pointer;
+}
+.buttons button:first-child img {
+  transform:rotate(180deg);
+}
 `;
