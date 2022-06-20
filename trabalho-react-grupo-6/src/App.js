@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <Contexto>
-        <Root />
+        <Root />       
       </Contexto>
     </>
   );
