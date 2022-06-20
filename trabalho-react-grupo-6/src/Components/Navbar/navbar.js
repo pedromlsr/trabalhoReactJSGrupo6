@@ -9,8 +9,8 @@ import { Navbar } from "./style";
 export const NavBar = () => {
   return (
     <Navbar>
-      <Container1></Container1>
       <Container2></Container2>
+      <Container1></Container1>
       <ContainerCarrinho></ContainerCarrinho>
     </Navbar>
   );

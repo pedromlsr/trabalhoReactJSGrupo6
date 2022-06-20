@@ -35,7 +35,7 @@ export const FormularioCliente = () => {
       complemento,
     };
     const postCliente = async (cliente) => {
-      await api.post('cliente', cliente);
+      await api.post("cliente", cliente);
     };
     postCliente(cliente);
 
@@ -51,15 +51,16 @@ export const FormularioCliente = () => {
   return (
     <Container>
       <Formulario onSubmit={handleSubmit} method="post">
-        <Titulo>NOVO CADASTRO</Titulo>
+        <Titulo>NOVO CLIENTE</Titulo>
+        <Input
+          largura="41.2rem"
+          type="text"
+          required
+          value={nomeCompleto}
+          onChange={(e) => setNomeCompleto(e.target.value)}
+          placeholder="Nome completo*"
+        />
         <ContainerInterno>
-          <Input
-            type="text"
-            required
-            value={nomeCompleto}
-            onChange={(e) => setNomeCompleto(e.target.value)}
-            placeholder="Nome completo*"
-          />
           <Input
             type="text"
             required
@@ -67,8 +68,6 @@ export const FormularioCliente = () => {
             onChange={(e) => setCpf(e.target.value)}
             placeholder="CPF*"
           />
-        </ContainerInterno>
-        <ContainerInterno>
           <Input
             type="text"
             required
@@ -76,6 +75,8 @@ export const FormularioCliente = () => {
             onChange={(e) => setDataNascimento(e.target.value)}
             placeholder="Data de Nascimento*"
           />
+        </ContainerInterno>
+        <ContainerInterno>
           <Input
             type="text"
             required
@@ -83,8 +84,6 @@ export const FormularioCliente = () => {
             onChange={(e) => setTelefone(e.target.value)}
             placeholder="Telefone*"
           />
-        </ContainerInterno>
-        <ContainerInterno>
           <Input
             type="email"
             required
@@ -92,36 +91,35 @@ export const FormularioCliente = () => {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="E-mail*"
           />
-          <Input type="email" placeholder="Confirme seu e-mail*" />
         </ContainerInterno>
         <Titulo>ENDEREÇO</Titulo>
-        <Input
-          type="text"
-          required
-          value={cep}
-          onChange={(e) => setCep(e.target.value)}
-          placeholder="CEP*"
-        />
-        <Input
-          type="text"
-          value={numero}
-          onChange={(e) => setNumero(e.target.value)}
-          placeholder="Número"
-        />
-        <Input
-          type="text"
-          value={complemento}
-          onChange={(e) => setComplemento(e.target.value)}
-          placeholder="Complemento"
-        />
         <ContainerInterno>
-          <input type="checkbox" />
-          Usar esse mesmo endereço para entregas
+          <Input
+            largura="12.9rem"
+            type="text"
+            required
+            value={cep}
+            onChange={(e) => setCep(e.target.value)}
+            placeholder="CEP*"
+          />
+          <Input
+            largura="12.9rem"
+            type="text"
+            value={numero}
+            onChange={(e) => setNumero(e.target.value)}
+            placeholder="Número"
+          />
+          <Input
+            largura="12.9rem"
+            type="text"
+            value={complemento}
+            onChange={(e) => setComplemento(e.target.value)}
+            placeholder="Complemento"
+          />
         </ContainerInterno>
         * Campos obrigatórios
-        <ContainerInterno>
+        <ContainerInterno alinhamento="center">
           <InputButton type="submit" value="Cadastrar" />
-          {/* <InputButton type="reset" value="Limpar"/> */}
         </ContainerInterno>
       </Formulario>
     </Container>

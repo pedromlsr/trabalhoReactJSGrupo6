@@ -4,8 +4,8 @@ import { Container, Logo } from "./style";
 
 export const ButtonRS = (props) => {
   return (
-    <Container>
-      <Logo>{props.logo}</Logo>
+    <Container className = "container">
+      <Logo className = "logo">{props.logo}</Logo>
     </Container>
   );
 };

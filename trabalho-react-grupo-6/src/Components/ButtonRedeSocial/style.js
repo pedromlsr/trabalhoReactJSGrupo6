@@ -17,12 +17,16 @@ export const Container = styled.button`
     background-color: #faae3e;
   }
   &:active {
-    box-shadow: 2px 2px 4px 1px #fff, inset 2px 2px 4px 0px #00000025;
+    box-shadow: 2px 2px 4px 1px #ffffff90, inset 2px 2px 4px 0px #00000025;
     background-color: #f7a328;
   }
 `;
 
 export const Logo = styled.div`
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  padding: 0.4rem;
   &:active {
     transform: scale(0.9);
   }
