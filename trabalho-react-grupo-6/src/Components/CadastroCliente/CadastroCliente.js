@@ -84,7 +84,6 @@ export const FormularioCliente = () => {
             placeholder="Telefone*"
           />
         </ContainerInterno>
-        <ContainerInterno>
           <Input
             type="email"
             required
@@ -92,8 +91,6 @@ export const FormularioCliente = () => {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="E-mail*"
           />
-          <Input type="email" placeholder="Confirme seu e-mail*" />
-        </ContainerInterno>
         <Titulo>ENDEREÇO</Titulo>
         <Input
           type="text"

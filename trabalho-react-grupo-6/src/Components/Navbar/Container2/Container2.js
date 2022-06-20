@@ -1,4 +1,5 @@
 import React from "react";
+import { ExternalLink } from "react-external-link";
 
 import { ButtonRS } from "../../ButtonRedeSocial/ButtonRS";
 
@@ -11,9 +12,15 @@ export const Container2 = () => {
   return (
     <Container>
       <ContainerButtons>
-        <ButtonRS logo={<Logo src={IG} />} />
-        <ButtonRS logo={<Logo src={FB} />} />
-        <ButtonRS logo={<Logo src={Twttr} />} />
+        <ExternalLink href="https://instagram.com">
+          <ButtonRS logo={<Logo src={IG} />} />
+        </ExternalLink>
+        <ExternalLink href="https://facebook.com">
+          <ButtonRS logo={<Logo src={FB} />} />
+        </ExternalLink>
+        <ExternalLink href="https://twitter.com">
+          <ButtonRS logo={<Logo src={Twttr} />} />
+        </ExternalLink>
       </ContainerButtons>
     </Container>
   );

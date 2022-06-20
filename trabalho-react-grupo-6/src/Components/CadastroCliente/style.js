@@ -11,7 +11,6 @@ export const Titulo = styled.h1`
 `;
 
 export const Formulario = styled.form`
-  margin: 5rem auto;
   padding: 3rem;
   display: flex;
   flex-direction: column;
