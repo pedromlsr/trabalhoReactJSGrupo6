@@ -13,6 +13,20 @@ const saveProduto = async (produto) => {
    }
 }
 
+const updateProduto = async (produto) => {
+   try {
+      await api.put('produto', produto)
+      alert('Produto atualizado com sucesso!')
+   } catch (error) {
+      console.log(error)
+      alert(
+         error.response.data.message + ' ' + 
+         error.response.data.details
+      )
+   }
+}
+
 export const apiProduto = {
-   saveProduto
+   saveProduto,
+   updateProduto
 }

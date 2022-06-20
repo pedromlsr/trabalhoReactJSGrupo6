@@ -13,6 +13,20 @@ const saveCategoria = async (categoria) => {
    }
 }
 
+const updateCategoria = async (categoria) => {
+   try {
+      await api.put('categoria', categoria)
+      alert('Categoria atualizada com sucesso!')
+   } catch (error) {
+      console.log(error)
+      alert(
+         error.response.data.message + ' ' + 
+         error.response.data.details
+      )
+   }
+}
+
 export const apiCategoria = {
-   saveCategoria
+   saveCategoria,
+   updateCategoria
 }

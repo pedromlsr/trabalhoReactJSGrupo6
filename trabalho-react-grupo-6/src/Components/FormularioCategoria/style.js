@@ -6,4 +6,5 @@ export const Form = styled.form`
    gap: 0.5rem;
    width: 50%;
    margin: auto;
+   color: #fff;
 `
