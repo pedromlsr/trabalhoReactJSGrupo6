@@ -2,8 +2,8 @@ import React, { useEffect, useState, useRef } from "react";
 import { CategorieArea } from "./Styles";
 import { ModelCard } from "../Card/Card"
 import { CategorieTitleContainer } from "../CategorieTitle/CategorieTitle";
-import { api } from "../../Service/api"
-import buttonImage from "../../Assets/Img/216151_right_chevron_icon.png"
+import { api } from "../../../Service/api"
+import buttonImage from "../../../Assets/Img/216151_right_chevron_icon.png"
 
 export const CategorieContainer = () => {
 
@@ -34,7 +34,7 @@ export const CategorieContainer = () => {
         <CategorieTitleContainer title={itemCat.nomeCategoria} />
         <div className="CardsContainer" ref={carousel} >
           {itemCat.produtoList.map((itemProd) => (
-            <ModelCard imagem={itemProd?.nomeImagemProduto} nomeProduto={itemProd?.nomeProduto} />
+            <ModelCard imagem={itemProd?.nomeImagemProduto} nomeProduto={itemProd?.nomeProduto} valor={itemProd?.valorUnitario} />
           ))}
         </div>
         <div className="buttons">

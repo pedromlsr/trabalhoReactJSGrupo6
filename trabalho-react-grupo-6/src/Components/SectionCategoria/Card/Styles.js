@@ -37,6 +37,20 @@ img {
   border-radius: 1rem ;
 }
 
+.nomeProduto, .valor{
+text-align: center ;
+color:#2B2E51 ;
+font-size:1.3rem;
+font-weight: bolder ;
+margin-top:0.5rem;
+}
+
+
+
+.valor{
+  color:#EE7057;
+}
+
 button {
   border: none ; 
   height: 20% ;
