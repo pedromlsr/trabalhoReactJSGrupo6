@@ -1,4 +1,4 @@
-import React, { useState, useContext} from "react";
+import React, { useState, useContext, useEffect} from "react";
 import { ModalItemPedido } from "./style";
 import { CartItensContext } from "../../../Context/data";
 
@@ -11,7 +11,7 @@ export const ItemPedido = ({ produto }) => {
   }
 
   produto.quantidade=quantidade
-
+  
   return (
     <ModalItemPedido>
       <td>

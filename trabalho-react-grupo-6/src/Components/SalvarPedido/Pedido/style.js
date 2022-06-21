@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const AreaPedido = styled.div`
   width:70%;
   margin: 5rem auto;
+  margin: 12rem;
   padding: 3rem;
   display: flex;
   flex-direction: column;

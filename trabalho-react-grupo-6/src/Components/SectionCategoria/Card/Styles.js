@@ -44,9 +44,6 @@ font-size:1.3rem;
 font-weight: bolder ;
 margin-top:0.5rem;
 }
-
-
-
 .valor{
   color:#EE7057;
 }
