@@ -10,7 +10,7 @@ export const ContainerCarrinho = () => {
   let navigate = useNavigate();
 
   function handleNavigate(){
-    navigate("pedido");
+    navigate("/pedido");
   }
 
   const { cartItens } = useContext(CartItensContext)
