@@ -1,4 +1,4 @@
-import { Form, Input, InputButton, TextArea, ContainerInterno } from "./style"
+import { Form, Input, InputButton, TextArea } from "./style"
 
 export const FormProd = (props) => {
 
@@ -37,6 +37,13 @@ export const FormProd = (props) => {
             required
             value={props.idCategoria}
             onChange={e => props.definirIdCat(e.target.value)}
+         />
+         <label>Imagem do produto:</label>
+         <Input
+            type="file"
+            // required
+            value={props.imagemProduto}
+            onChange={e => props.definirImgProd(e)}
          />
          <InputButton>{props.textoButton}</InputButton>
       </Form>
