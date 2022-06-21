@@ -23,4 +23,4 @@ const CartItensProvider = (props) => {
     );
 };
 
-export { CartItensContext, CartItensProvider };
+export {CartItensContext, CartItensProvider};
