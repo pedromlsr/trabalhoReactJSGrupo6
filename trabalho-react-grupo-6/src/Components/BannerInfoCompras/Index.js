@@ -12,24 +12,24 @@ export const BannerInfoCompras = () => {
             <Div>
                <Icon src={FreteIcon}/>
                <Text txtColor="#2B2E51">
-                  <p>Frete grátis a</p>
-                  <p>partir de R$400,00</p>
+                  Frete grátis a<br/>
+                  partir de R$400,00
                </Text>
             </Div>
             <Sep bgColor="#2B2E51"/>
             <Div>
                <Icon src={CartaoIcon}/>
                <Text txtColor="#2B2E51">
-                  <p>Parcele em até</p>
-                  <p>6x sem juros</p>
+                  Parcele em até<br/>
+                  6x sem juros
                </Text>
             </Div>
             <Sep bgColor="#2B2E51"/>
             <Div>
                <Icon src={DescontoIcon}/>
                <Text txtColor="#2B2E51">
-                  <p>Desconto de 10%</p>
-                  <p>no pix ou boleto</p>
+                  Desconto de 10%<br/>
+                  no pix ou boleto
                </Text>         
             </Div>
          </Container>
