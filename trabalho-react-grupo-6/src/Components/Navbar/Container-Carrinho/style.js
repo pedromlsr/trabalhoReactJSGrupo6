@@ -6,12 +6,13 @@ export const Container = styled.div`
   width: 4.5rem;
   `;
 
-export const CarrinhoImg = styled.div`
+export const CarrinhoImg = styled.button`
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #2b2e51;
+  border: none;
   height: 3.5rem;
   width: 5rem;
   &:hover {
