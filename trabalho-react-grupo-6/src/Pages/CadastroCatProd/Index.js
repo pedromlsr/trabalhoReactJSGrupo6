@@ -212,15 +212,15 @@ export const AreaInterna = () => {
   const respostaRequest = (request) => {
     if (request === "findAllClientes") {
       return (
-        <Ul width="60%">
+        <Ul>
           {clientes
             .sort((a, b) => a.idCliente - b.idCliente)
             .map((res, key) => (
               <Li key={key}>
-                <Text>Id: </Text> {res.idCliente + " | "}
-                <Text>Nome: </Text> {res.nomeCompleto + " | "}
-                <Text>Email: </Text> {res.email + " | "}
-                <Text>Telefone: </Text> {res.telefone + " | "}
+                <Text>Id: </Text> {res.idCliente}
+                <Text>Nome: </Text> {res.nomeCompleto}
+                <Text>Email: </Text> {res.email}
+                <Text>Telefone: </Text> {res.telefone}
               </Li>
             ))}
         </Ul>
@@ -233,7 +233,7 @@ export const AreaInterna = () => {
           <Div>
             <Label>Id do cliente:</Label>
             <Input
-              width="10rem"
+              width="5rem"
               type="number"
               required
               value={idCliente}
@@ -270,8 +270,8 @@ export const AreaInterna = () => {
             .sort((a, b) => a.idCategoria - b.idCategoria)
             .map((res, key) => (
               <Li key={key}>
-                <Text>Id: </Text> {res.idCategoria + " | "}
-                <Text>Nome: </Text> {res.nomeCategoria + " | "}
+                <Text>Id: </Text> {res.idCategoria}
+                <Text>Nome: </Text> {res.nomeCategoria}
               </Li>
             ))}
         </Ul>
@@ -284,7 +284,7 @@ export const AreaInterna = () => {
           <Div>
             <Label>Id da categoria:</Label>
             <Input
-              width="10rem"
+              width="5rem"
               type="number"
               required
               value={idCategoria}
@@ -299,6 +299,12 @@ export const AreaInterna = () => {
               </Li>
               <Li>
                 <Text>Nome: </Text>  {categoria.nomeCategoria}
+              </Li>
+              <Li>
+                <Text>Descrição: </Text>  
+              </Li>
+              <Li>
+                {categoria.descricaoCategoria}
               </Li>
             </Ul>
           ) : (
@@ -315,12 +321,12 @@ export const AreaInterna = () => {
             .sort((a, b) => a.idProduto - b.idProduto)
             .map((res, key) => (
               <Li key={key}>
-                <Text>Id: </Text> {res.idProduto + " | "}
-                <Text>Nome: </Text> {res.nomeProduto + " | "}
-                <Text>Descrição: </Text> {res.descricaoProduto + " | "}
-                <Text>Categoria: </Text> {res.nomeCategoria + " | "}
-                <Text>Qtd. em Estoque: </Text> {res.qtdEstoque + " | "}
-                <Text>Preço: R$</Text> {res.valorUnitario.toFixed(2) + " | "}
+                <Text>Id: </Text> {res.idProduto}
+                <Text>Nome: </Text> {res.nomeProduto}
+                <Text>Descrição: </Text> {res.descricaoProduto}
+                <Text>Categoria: </Text> {res.nomeCategoria}
+                <Text>Qtd. em Estoque: </Text> {res.qtdEstoque}
+                <Text>Preço: R$</Text> {res.valorUnitario.toFixed(2)}
               </Li>
             ))}
         </Ul>
@@ -333,7 +339,7 @@ export const AreaInterna = () => {
           <Div>
             <Label>Id do produto:</Label>
             <Input
-              width="10rem"
+              width="5rem"
               type="number"
               required
               value={idProduto}
@@ -350,7 +356,10 @@ export const AreaInterna = () => {
                 <Text>Nome: </Text>  {produto.nomeProduto}
               </Li>
               <Li>
-                <Text>Descrição: </Text>  {produto.descricaoProduto}
+                <Text>Descrição: </Text>  
+              </Li>
+              <Li>
+                {produto.descricaoProduto}
               </Li>
               <Li>
                 <Text>Categoria: </Text>  {produto.nomeCategoria}
@@ -376,9 +385,9 @@ export const AreaInterna = () => {
             .sort((a, b) => a.idPedido - b.idPedido)
             .map((res, key) => (
               <Li key={key}>
-                <Text>Id: </Text> {res.idPedido + " | "}
-                <Text>Cliente: </Text> {res.nomeCliente + " | "}
-                <Text>Data do Pedido: </Text> {res.dataPedido + " | "}
+                <Text>Id: </Text> {res.idPedido}
+                <Text>Cliente: </Text> {res.nomeCliente}
+                <Text>Data do Pedido: </Text> {res.dataPedido}
                 <Text>Valor Líquido Total: R$</Text> {res.valorLiqTotal.toFixed(2) + " | "}
               </Li>
             ))}
@@ -392,7 +401,7 @@ export const AreaInterna = () => {
           <Div>
             <Label>Id do pedido:</Label>
             <Input
-              width="10rem"
+              width="5rem"
               type="number"
               required
               value={idPedido}
@@ -439,7 +448,7 @@ export const AreaInterna = () => {
           <Div>
             <Label>Id da categoria:</Label>
             <Input
-              width="10rem"
+              width="5rem"
               type="number"
               required
               value={idCategoria}
@@ -485,7 +494,7 @@ export const AreaInterna = () => {
           <Div>
             <Label>Id do produto:</Label>
             <Input
-              width="10rem"
+              width="5rem"
               type="number"
               required
               value={idProduto}
