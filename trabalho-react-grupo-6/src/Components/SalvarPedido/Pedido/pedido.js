@@ -1,4 +1,5 @@
-import React from "react";
+import React,{useContext} from "react";
+import { CartItensContext } from "../../../Context/data";
 import { InputButton } from "../../CadastroCliente/style";
 import { ItemPedido } from "../ItemPedido/itemPedido";
 import { AreaPedido, AreaProdutos, Titulo } from "./style";
@@ -6,17 +7,15 @@ import { AreaPedido, AreaProdutos, Titulo } from "./style";
 
 export const PostPedido = () => {
 
-  const items = [{ nomeProduto: "Produto 1", descricao:"Desc prod 1",valorProduto:150.00 }, { nomeProduto: "Produto2",descricao:"Desc prod 2",valorProduto:50.00 }, { nomeProduto: "Produto 3", descricao:"Desc prod 3",valorProduto:199.90 }
-
-  ];
-
+  const {cartItens} = useContext(CartItensContext)
+  
   return (
     <AreaPedido>
       <Titulo>
         <h1>Carrinho de Compras</h1>
       </Titulo>
       <AreaProdutos>
-        {items?.map((item) => (
+        {cartItens?.map((item) => (
           <ItemPedido produto={item} />
         ))}
       </AreaProdutos>

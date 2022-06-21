@@ -18,7 +18,7 @@ export const ItemPedido = ({ produto }) => {
           Descrição:
         </TituloContainer>
         <ContentContainer>
-          {produto.descricao}
+          {produto.descricaoProduto}
         </ContentContainer>
       </Container>
       <Container>
@@ -34,7 +34,7 @@ export const ItemPedido = ({ produto }) => {
           Valor Unitário:
         </TituloContainer>
         <ContentContainer>
-          {produto.valorProduto}
+          {produto.valorUnitario}
         </ContentContainer>
       </Container>
       <Container>
