@@ -8,7 +8,7 @@ import {
   ContainerInterno,
   Formulario,
   Input,
-  InputButton,
+  InputButton
 } from "./style";
 
 export const FormularioCliente = () => {
