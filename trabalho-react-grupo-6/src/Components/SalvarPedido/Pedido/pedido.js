@@ -8,7 +8,6 @@ import { api } from "../../../Service/api";
 
 export const PostPedido = () => {
   const { cartItens } = useContext(CartItensContext)
-  
   let pedido = {
     idCliente: 6,
     valorLiqTotal: 0.0,

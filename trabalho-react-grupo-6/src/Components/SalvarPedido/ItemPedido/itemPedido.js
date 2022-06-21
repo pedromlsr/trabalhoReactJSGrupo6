@@ -10,6 +10,8 @@ export const ItemPedido = ({ produto }) => {
     cartItens.splice(cartItens.findIndex(produto => produto.idProduto === exclusao.idProduto), 1)
   }
 
+  produto.quantidade=quantidade
+
   return (
     <ModalItemPedido>
       <td>
@@ -20,7 +22,7 @@ export const ItemPedido = ({ produto }) => {
       </td>
       <td>
         <input type="number" value={quantidade} onChange={(e) => setQuantidade(e.target.value)} min={0} max={produto.qtdEstoque}></input>
-      </td>
+         </td>
       <td>
         {new Intl.NumberFormat('pt-BR', {
           style: 'currency',
