@@ -35,7 +35,13 @@ export const FormularioCliente = () => {
       complemento,
     };
     const postCliente = async (cliente) => {
-      await api.post("cliente", cliente);
+      try {
+        await api.post("cliente", cliente);
+        alert("Cliente cadastrado com sucesso");
+      } catch (error) {
+        console.log(error);
+        alert(error.response.data.message + " " + error.response.data.details);
+      }
     };
     postCliente(cliente);
 
