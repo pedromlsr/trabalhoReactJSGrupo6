@@ -11,6 +11,7 @@ export const TitleArea = styled.div`
   font-weight: 700;
   width:40%;
   border-radius:0 0.5rem 2rem 0 ;
+  margin-top: 2rem;
   box-shadow: 2px 3px 4px 1px #00000050,
     inset -1px 2px 4px 0px #fff,
     inset 2px -2px 4px 0px #00000050;
