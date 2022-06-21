@@ -9,27 +9,23 @@ export const CategorieArea=styled.div`
   height:30rem;
   overflow-x: auto ;
 } 
-.CardsContainer::-webkit-scrollbar{
+
+.CardsSlider {
+  display:flex;  
+  justify-content:space-between ;
+  align-items: center ;
+  height:30rem;
+  overflow-x: auto ;
+} 
+
+.CardsSlider::-webkit-scrollbar{
   background-color: #141529;
   height:0.5rem ;  
   }
   
-.CardsContainer::-webkit-scrollbar-thumb{
+.CardsSlider::-webkit-scrollbar-thumb{
   background-color:  #686DB1;
   border-radius:1rem ; 
   }
 
-.buttons {
-  width:100%;
-  text-align: center ;
-}
-
-.buttons button{
-  background-color: transparent ;
-  border: none;
-  cursor: pointer;
-}
-.buttons button:first-child img {
-  transform:rotate(180deg);
-}
 `;
