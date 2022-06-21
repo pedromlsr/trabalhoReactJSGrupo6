@@ -6,7 +6,6 @@ import { api } from "../../../Service/api"
 import buttonImage from "../../../Assets/Img/216151_right_chevron_icon.png"
 
 export const CategorieContainer = () => {
-
   const [categorias, setCategorias] = useState([]);
   const carousel = useRef(null);
   
@@ -34,8 +33,8 @@ export const CategorieContainer = () => {
         <CategorieTitleContainer title={itemCat.nomeCategoria} />
         <div className="CardsContainer" ref={carousel} >
           {itemCat.produtoList.map((itemProd) => (
-            <ModelCard imagem={itemProd?.nomeImagemProduto} nomeProduto={itemProd?.nomeProduto} valor={itemProd?.valorUnitario} />
-          ))}
+            <ModelCard produto={itemProd}/>
+            ))}
         </div>
         <div className="buttons">
           <button onClick={handleLeftClick}><img src={buttonImage} alt="Scroll-Left" /></button>
@@ -43,6 +42,7 @@ export const CategorieContainer = () => {
         </div>
       </CategorieArea>
     ))
-  )
+    
+    )
 }
 

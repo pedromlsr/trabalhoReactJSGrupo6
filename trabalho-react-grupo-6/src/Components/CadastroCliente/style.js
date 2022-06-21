@@ -3,11 +3,12 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: -4rem;
+  margin-top: 2rem;
   padding-bottom: 3rem;
 `;
 
 export const Formulario = styled.form`
+  margin-top: 10rem;
   padding: 1rem;
   display: flex;
   flex-direction: column;
