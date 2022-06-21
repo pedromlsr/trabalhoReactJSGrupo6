@@ -1,4 +1,4 @@
-import React, { useContext} from "react";
+import React, { useContext } from "react";
 import { CartItensContext } from "../../../Context/data";
 import { InputButton } from "../../CadastroCliente/style";
 import { ItemPedido } from "../ItemPedido/itemPedido";
@@ -7,46 +7,38 @@ import { api } from "../../../Service/api";
 
 
 export const PostPedido = () => {
+
   const { cartItens } = useContext(CartItensContext)
-  let pedido = {
-    idCliente: 6,
-    valorLiqTotal: 0.0,
-    itemPedidoList: [
-      {
-        produto: {
-          idProduto: 2,
-          nomeProduto: "Produto 2",
-          descricaoProduto: "Produto 2"
-        },
-        quantidade: 10,
-        precoVenda: 199.90,
-        percentualDesconto: 0
-      },
-      {
-        produto: {
-          idProduto: 3,
-          nomeProduto: "Produto 3",
-          descricaoProduto: "Produto 3"
-        },
-        quantidade: 10,
-        precoVenda: 99.90,
-        percentualDesconto: 0
-      }
-    ]
+
+  const calcularTotal = () => {
+    let total = 0;
+    cartItens?.map((item) => (
+      total += item.quantidade * item.valorUnitario
+    )
+    )
+    return (total)
   }
 
-  const savePedido = async (pedido) => {
+  const finishBuy = (cartItens) => {
     try {
-      await api.post('pedido', pedido)
+      const itemPedidoList = []
+      cartItens?.map((item) => {
+        const produto = {
+          produto: { idProduto: item.idProduto },
+          quantidade: item.quantidade,
+          precoVenda: item.valorUnitario,
+          percentualDesconto: 0
+        };
+        itemPedidoList.push(produto);
+      })
+      const body = { idCliente: 1, valorLiqTotal: 0, itemPedidoList };
+      api.post('pedido', body);
       alert('Pedido finalizado com sucesso!')
-    } catch (error) {
-      console.log(error)
-      alert(
-        error.response.data.message + ' ' +
-        error.response.data.details
-      )
+    } catch (err) {
+      console.log(err)
     }
   }
+
 
   return (
     <AreaPedido>
@@ -65,10 +57,14 @@ export const PostPedido = () => {
           {cartItens?.map((item) => (
             <ItemPedido produto={item} />
           ))}
-          <Total>Total:</Total>
+          <Total>Total:
+            {new Intl.NumberFormat('pt-BR', {
+              style: 'currency',
+              currency: 'BRL',
+            }).format(calcularTotal())}</Total>
         </Tabela>
       </AreaProdutos>
-      <InputButton onClick={() => savePedido(pedido)} type="submit" value="Confirmar Pedido" />
+      <InputButton onClick={() => finishBuy(cartItens)} type="submit" value="Confirmar Pedido" />
     </AreaPedido>
   )
 }

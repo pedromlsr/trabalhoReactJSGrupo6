@@ -3,12 +3,11 @@ import { CategorieArea } from "./Styles";
 import { ModelCard } from "../Card/Card"
 import { CategorieTitleContainer } from "../CategorieTitle/CategorieTitle";
 import { api } from "../../../Service/api"
-import buttonImage from "../../../Assets/Img/216151_right_chevron_icon.png"
 
 export const CategorieContainer = () => {
   const [categorias, setCategorias] = useState([]);
   const carousel = useRef(null);
-  
+
   useEffect(() => {
     const getData = async () => {
       const response = await api.get('categoria');
@@ -17,32 +16,30 @@ export const CategorieContainer = () => {
     getData()
   }, [])
 
-  const handleLeftClick = (e) => {
-    carousel.current.scrollLeft -= 340;
-    console.log(carousel.current.scrollLeft)
-  };
-
-  const handleRightClick = (e) => {
-    carousel.current.scrollLeft += 340;
-    console.log(carousel.current.scrollLeft)
-  };
+  function verificarQtdCards(itemCat) {
+    if (itemCat.produtoList.length <= 4) {
+      return (<div className="CardsContainer" ref={carousel} >
+        {itemCat.produtoList.map((itemProd) => (
+          <ModelCard produto={itemProd} />
+        ))}
+      </div>)
+    } else {
+      return (<div className="CardsSlider" ref={carousel} >
+        {itemCat.produtoList.map((itemProd) => (
+          <ModelCard produto={itemProd} />
+        ))}
+      </div>)
+    }
+  }
 
   return (
     categorias?.map((itemCat) => itemCat.produtoList.length !== 0 && (
       <CategorieArea >
         <CategorieTitleContainer title={itemCat.nomeCategoria} />
-        <div className="CardsContainer" ref={carousel} >
-          {itemCat.produtoList.map((itemProd) => (
-            <ModelCard produto={itemProd}/>
-            ))}
-        </div>
-        <div className="buttons">
-          <button onClick={handleLeftClick}><img src={buttonImage} alt="Scroll-Left" /></button>
-          <button onClick={handleRightClick}><img src={buttonImage} alt="Scroll-Right" /></button>
-        </div>
+        {verificarQtdCards(itemCat)}
       </CategorieArea>
     ))
-    
-    )
+
+  )
 }
 
