@@ -409,19 +409,33 @@ export const AreaInterna = () => {
           </Div>
           <InputButton onClick={handleSubmit}>Encontrar Pedido</InputButton>
           {mostrar ? (
+            // <Ul>
+            //   <Li>
+            //     {"Id: " +
+            //       pedido.idPedido +
+            //       " | Cliente: " +
+            //       pedido.nomeCliente +
+            //       " | Data: " +
+            //       pedido.dataPedido +
+            //       " | Valor Líquido Total: R$ " +
+            //       pedido.valorLiqTotal.toFixed(2)}
+            //   </Li>
+            // </Ul>
             <Ul>
-              <li>
-                {"Id: " +
-                  pedido.idPedido +
-                  " | Cliente: " +
-                  pedido.nomeCliente +
-                  " | Data: " +
-                  pedido.dataPedido +
-                  " | Valor Líquido Total: R$ " +
-                  pedido.valorLiqTotal.toFixed(2)}
-              </li>
-            </Ul>
-          ) : (
+            <Li>
+              <Text>Id: </Text>  {pedido.idPedido}
+            </Li>
+            <Li>
+              <Text>Cliente: </Text>  {pedido.nomeCliente}
+            </Li>
+            <Li>
+              <Text>Data: </Text> {pedido.dataPedido}
+            </Li>
+            <Li>
+              <Text>Valor Líquido Total: </Text> {'R$ ' + pedido.valorLiqTotal.toFixed(2)}
+            </Li>
+          </Ul>
+            ) : (
             <H4>Digite o Id do pedido desejado</H4>
           )}
         </Formulario>
