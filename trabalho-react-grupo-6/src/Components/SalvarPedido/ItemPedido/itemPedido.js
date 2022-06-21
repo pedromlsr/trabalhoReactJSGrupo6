@@ -1,5 +1,5 @@
 import React, { useState, useContext} from "react";
-import { ModalItemPedido } from "./style";
+import { ModalItemPedido, Input, Td, Button } from "./style";
 import { CartItensContext } from "../../../Context/data";
 
 export const ItemPedido = ({ produto }) => {
@@ -21,9 +21,9 @@ export const ItemPedido = ({ produto }) => {
       <td>
         {produto.descricaoProduto}
       </td>
-      <td>
-        <input type="number" value={quantidade} onChange={(e) => setQuantidade(e.target.value)} min={0} max={produto.qtdEstoque}></input>
-         </td>
+      <Td>
+        <Input type="number" value={quantidade} onChange={(e) => setQuantidade(e.target.value)} min={0} max={produto.qtdEstoque}></Input>
+         </Td>
       <td>
         {new Intl.NumberFormat('pt-BR', {
           style: 'currency',
@@ -38,7 +38,7 @@ export const ItemPedido = ({ produto }) => {
 
       </td>
       <td>
-        <button onClick={() => excluir(produto)}>Excluir</button>
+        <Button onClick={() => excluir(produto)}>X</Button>
       </td>
     </ModalItemPedido>
 
