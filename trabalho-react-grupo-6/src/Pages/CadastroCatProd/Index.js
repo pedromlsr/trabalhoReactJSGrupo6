@@ -175,13 +175,13 @@ export const AreaInterna = () => {
       };
       // apiProduto.saveProduto(produto);
       const formData = new FormData()
-      formData.append('produto', produto)
+      formData.append('produto', new Blob([JSON.stringify(produto)],{type:'application/json'}))
       formData.append('file', imagemProduto)
       try {
          await api.post('produto/com-foto', formData, {
             headers: {
                'accept': 'application/json',
-               'Content-Type': 'multipart/format-data'
+               'Content-Type': 'multipart/form-data'
             }
          })
          alert('Produto cadastrado com sucesso!')
@@ -323,7 +323,6 @@ export const AreaInterna = () => {
               <Li key={key}>
                 <Text>Id: </Text> {res.idProduto}
                 <Text>Nome: </Text> {res.nomeProduto}
-                <Text>Descrição: </Text> {res.descricaoProduto}
                 <Text>Categoria: </Text> {res.nomeCategoria}
                 <Text>Qtd. em Estoque: </Text> {res.qtdEstoque}
                 <Text>Preço: R$</Text> {res.valorUnitario.toFixed(2)}
