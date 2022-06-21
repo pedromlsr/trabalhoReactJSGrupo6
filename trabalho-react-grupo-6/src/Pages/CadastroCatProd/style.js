@@ -53,19 +53,14 @@ export const Container = styled.div`
 export const Ul = styled.ul`
   display: flex;
   flex-direction: column;
+  align-items: left;
+  flex-wrap: wrap;
   gap: 0.5rem;
   margin: auto;
-  color: #fff;
-  list-style: disc;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-
   padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  width: 50%;
+  list-style: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   width: ${(props) => props.width};
-  margin: auto;
   margin-top: 1rem;
   color: #f7b048;
   background: #2b2e51;
@@ -75,11 +70,12 @@ export const Ul = styled.ul`
 
 export const Li = styled.li `
   display: flex;
-  list-style-type: none; 
+  list-style-type: none;
+  border-bottom: 1px solid #f7b048; 
 `
 
 export const Text = styled.p `
-  margin-right: 0.3rem;
+  margin: 0 0.3rem 0.3rem 0.5rem;
   font-weight: bold;
   color: #ee7057;
 `
@@ -122,13 +118,20 @@ export const Input = styled.input`
   height: 2.5rem;
   width: 20rem;
   width: ${(props) => props.width};
-  border-radius: 10px;
+  border-radius: 50px;
   border: 2px solid #2b2e51;
-  margin: 0.3rem;
   text-align: center;
   font-size: 1.5rem;
+  margin: 0.3rem;
+  background: #f7b048;
+  box-shadow: 2px 2px 2px 0.5px #ffffff50,
+    -2px -2px 2px 0.5px #ffffff50,
+    inset 2px 2px 4px 0px #00000050;
   &:focus {
     border: 4px solid #f7b048;
+  }
+  ::-webkit-inner-spin-button {
+    -webkit-appearance: none;
   }
 `;
 
@@ -139,8 +142,15 @@ export const InputButton = styled.button`
   width: 10rem;
   border-radius: 10px;
   border: none;
+  box-shadow: 2px 3px 4px 1px #00000050,
+    inset -1px 2px 4px 0px #fff,
+    inset 2px -2px 4px 0px #00000050;
   &:hover {
     background-color: #f7b048;
+  }
+  &:active {
+    box-shadow: 2px 2px 4px 0px #ffffff50, inset 2px 2px 4px 0px #000000;
+    background-color: #f7a328;
   }
 `
 
