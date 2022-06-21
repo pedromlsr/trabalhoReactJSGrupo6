@@ -1,14 +1,43 @@
-import React from "react";
+import React, { useContext } from "react";
+import { CartItensContext } from "../../../Context/data";
 import { InputButton } from "../../CadastroCliente/style";
 import { ItemPedido } from "../ItemPedido/itemPedido";
-import { AreaPedido, AreaProdutos, Titulo } from "./style";
+import { AreaPedido, AreaProdutos, Tabela, Titulo, Total } from "./style";
+import { api } from "../../../Service/api";
 
 
 export const PostPedido = () => {
 
-  const items = [{ nomeProduto: "Produto 1", descricao:"Desc prod 1",valorProduto:150.00 }, { nomeProduto: "Produto2",descricao:"Desc prod 2",valorProduto:50.00 }, { nomeProduto: "Produto 3", descricao:"Desc prod 3",valorProduto:199.90 }
+  const { cartItens } = useContext(CartItensContext)
 
-  ];
+  const calcularTotal = () => {
+    let total = 0;
+    cartItens?.map((item) => (
+      total += item.quantidade * item.valorUnitario
+      )
+      )
+    return (total)
+  }
+  const finishBuy = (cartItens) => {
+    try {
+      const itemPedidoList = []
+      cartItens?.map((item) => {
+        const produto = {
+          produto: { idProduto: item.idProduto },
+          quantidade: item.quantidade,
+          precoVenda: item.valorUnitario,
+          percentualDesconto: 0
+        };
+        itemPedidoList.push(produto);
+      })
+      const body = { idCliente: 1, valorLiqTotal: 0, itemPedidoList };
+      api.post('pedido', body);
+      alert('Pedido finalizado com sucesso!')
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
 
   return (
     <AreaPedido>
@@ -16,11 +45,25 @@ export const PostPedido = () => {
         <h1>Carrinho de Compras</h1>
       </Titulo>
       <AreaProdutos>
-        {items?.map((item) => (
-          <ItemPedido produto={item} />
-        ))}
+        <Tabela>
+          <tr>
+            <Titulo> Produto:</Titulo>
+            <Titulo> Descrição:</Titulo>
+            <Titulo> Quantidade:</Titulo>
+            <Titulo> Valor Unitário:</Titulo>
+            <Titulo> Valor Total:</Titulo>
+          </tr>
+          {cartItens?.map((item) => (
+            <ItemPedido produto={item} />
+          ))}
+          <Total>Total:
+            {new Intl.NumberFormat('pt-BR', {
+              style: 'currency',
+              currency: 'BRL',
+            }).format(calcularTotal())}</Total>
+        </Tabela>
       </AreaProdutos>
-      <InputButton type="submit" value="Confirmar Pedido" />
+      <InputButton onClick={() => finishBuy(cartItens)} type="submit" value="Confirmar Pedido" />
     </AreaPedido>
   )
 }

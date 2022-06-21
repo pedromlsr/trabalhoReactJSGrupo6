@@ -4,7 +4,7 @@ export const Container = styled.div`
    padding: 0;
    margin-bottom: 2.5rem;
    box-sizing: border-box;
-   height: 10rem;
+   height: 5rem;
    width: 100%;
    background-color: ${props => props.bgColor};
    display: flex;
@@ -19,13 +19,13 @@ export const Div = styled.div`
 `
 
 export const Icon = styled.img`
-   width: 8rem;
-   height: 8rem;
+   width: 3rem;
+   height: 3rem;
 `
 
 export const Sep = styled.div`
    width: 0.3rem;
-   height: 8rem;
+   height: 3rem;
    background-color: ${props => props.bgColor};
    border-radius: 1rem;
    box-shadow: 0.2rem 0.2rem 0.4rem ${props => props.bgColor};

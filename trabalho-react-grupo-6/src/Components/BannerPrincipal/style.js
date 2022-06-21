@@ -16,5 +16,5 @@ export const ImgBannerEstrela = styled.img`
     `;
 
 export const ImgBannerJogo = styled.img`
-    width: 100vw;
+    width: 100%;
 `;

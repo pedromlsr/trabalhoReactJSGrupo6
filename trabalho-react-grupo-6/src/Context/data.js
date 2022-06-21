@@ -1,21 +1,31 @@
-import React, { useState } from "react";
+import React, { createContext, useState } from 'react';
 
-export const estadoContexto = {
-  
-}
 
-export const DataContext = React.createContext(null)
+const CartItensContext = createContext();
 
-export function Contexto(props) {
-  const [ nome, setNome ] = useState(estadoContexto);
 
-  function handleSetNome(e) {
-    setNome(e.target.value)
-  }
+const CartItensProvider = (props) => {
+    const [cartItens, setCartItens] = useState([]);
+    const[stateValorTotal, setValorTotal]= useState(0);
 
-  return (
-    <DataContext.Provider value={{nome, handleSetNome}}>
-      {props.children}
-    </DataContext.Provider>
-  )
-}
+    function addItem(produto) {
+        if(!cartItens.includes(produto))
+        setCartItens([...cartItens, produto])
+    }    
+
+    function valorTotal(value){
+    value.map((item)=>(
+       setValorTotal(item.quantidade*item.valorUnitario)
+    ))
+    }
+
+    return (
+        <CartItensContext.Provider
+            value={{ cartItens, addItem, valorTotal, stateValorTotal }}
+        >
+            {props.children}
+        </CartItensContext.Provider>
+    );
+};
+
+export {CartItensContext, CartItensProvider};
