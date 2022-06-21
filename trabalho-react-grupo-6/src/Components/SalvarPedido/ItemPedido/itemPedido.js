@@ -1,10 +1,10 @@
-import React from "react";
-import { ModalItemPedido} from "./style";
+import React, { useState } from "react";
+import { ModalItemPedido } from "./style";
 
 export const ItemPedido = ({ produto }) => {
-
+  const [quantidade, setQuantidade] = useState(1)
   return (
-   <ModalItemPedido> 
+    <ModalItemPedido>
       <td>
         {produto.produto.nomeProduto}
       </td>
@@ -12,15 +12,15 @@ export const ItemPedido = ({ produto }) => {
         {produto.produto.descricaoProduto}
       </td>
       <td>
-        <input type="number" required></input>
+        <input type="number" value={quantidade} onChange={(e) => setQuantidade(e.target.value)} min={0}></input>
       </td>
       <td>
-        {produto.produto.precoVenda}
+        {produto.precoVenda}
       </td>
       <td>
-        valor total
+        {quantidade * produto.precoVenda}
       </td>
     </ModalItemPedido>
-    
+
   )
 }

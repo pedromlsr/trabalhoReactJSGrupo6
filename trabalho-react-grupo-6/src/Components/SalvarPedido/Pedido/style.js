@@ -33,8 +33,11 @@ export const Tabela = styled.table`
 tr{
   height:5rem ;
 }  
-
   `
+
+export const Total = styled.div` 
+
+`
 
 export const InputButton = styled.input`
   cursor: pointer;
