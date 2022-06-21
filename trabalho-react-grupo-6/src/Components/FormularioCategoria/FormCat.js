@@ -1,17 +1,17 @@
-import { Form, Input, InputButton, TextArea } from "./style"
+import { Form, Input, InputButton, TextArea, Label } from "./style"
 
 export const FormCat = (props) => {
 
    return (
       <Form onSubmit={props.submeterCat}>
-         <label>Nome da categoria:</label>
+         <Label>Nome da categoria:</Label>
          <Input
             type="text"
             required
             value={props.nomeCategoria}
             onChange={e => props.definirNomeCat(e.target.value)}
          />
-         <label>Descrição da categoria:</label>
+         <Label>Descrição da categoria:</Label>
          <TextArea
             required
             value={props.descricaoCategoria}
