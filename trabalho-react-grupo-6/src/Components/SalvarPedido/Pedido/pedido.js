@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { CartItensContext } from "../../../Context/data";
 import { InputButton } from "../../CadastroCliente/style";
 import { ItemPedido } from "../ItemPedido/itemPedido";
