@@ -1,17 +1,18 @@
-import React, { useState, useContext, useEffect} from "react";
+import React, { useState, useContext} from "react";
 import { ModalItemPedido } from "./style";
 import { CartItensContext } from "../../../Context/data";
 
 export const ItemPedido = ({ produto }) => {
   const [quantidade, setQuantidade] = useState(1)
-  const { cartItens } = useContext(CartItensContext)
+  const { cartItens,valorTotal} = useContext(CartItensContext)
   
   function excluir(exclusao) {
     cartItens.splice(cartItens.findIndex(produto => produto.idProduto === exclusao.idProduto), 1)
   }
-
-  produto.quantidade=quantidade
   
+  produto.quantidade=quantidade  
+   valorTotal(cartItens)  
+     
   return (
     <ModalItemPedido>
       <td>
