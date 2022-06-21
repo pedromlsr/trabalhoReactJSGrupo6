@@ -63,5 +63,4 @@ export const InputButton = styled.input`
   &:hover {
     background-color: #f7b048;
   }
-
 `;
