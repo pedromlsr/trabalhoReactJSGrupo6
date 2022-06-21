@@ -14,13 +14,27 @@ export const AreaPedido = styled.div`
   border-radius: 10px;
   box-shadow: 2px 2px 10px 1px #f7b048;
 `
-export const Titulo = styled.div` 
+export const Titulo = styled.th` 
   color:#f7b048;
   font-weight: bold;
   font-size:1.5rem ;
 `
 export const AreaProdutos = styled.div`
-  width:70%;`
+  display: flex ;
+  justify-content: center ;
+  align-items: center ;
+  margin-top: 2rem ;
+  width:100%;
+  `
+
+export const Tabela = styled.table`
+  text-align:left ;
+  width:100%;
+tr{
+  height:5rem ;
+}  
+
+  `
 
 export const InputButton = styled.input`
   cursor: pointer;

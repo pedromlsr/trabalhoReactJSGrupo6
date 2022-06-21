@@ -1,47 +1,26 @@
 import React from "react";
-import { ModalItemPedido, Container, TituloContainer, ContentContainer } from "./style";
+import { ModalItemPedido} from "./style";
 
 export const ItemPedido = ({ produto }) => {
 
   return (
-    <ModalItemPedido>
-      <Container>
-        <TituloContainer>
-          Produto:
-        </TituloContainer>
-        <ContentContainer>
-          {produto.nomeProduto}
-        </ContentContainer>
-      </Container>
-      <Container>
-        <TituloContainer>
-          Descrição:
-        </TituloContainer>
-        <ContentContainer>
-          {produto.descricaoProduto}
-        </ContentContainer>
-      </Container>
-      <Container>
-        <TituloContainer>
-          Quantidade:
-        </TituloContainer>
-        <ContentContainer>
-          <input type="number" required></input>
-        </ContentContainer>
-      </Container>
-      <Container>
-        <TituloContainer>
-          Valor Unitário:
-        </TituloContainer>
-        <ContentContainer>
-          {produto.valorUnitario}
-        </ContentContainer>
-      </Container>
-      <Container>
-        <TituloContainer>
-          Valor Total:
-        </TituloContainer>
-      </Container>
+   <ModalItemPedido> 
+      <td>
+        {produto.produto.nomeProduto}
+      </td>
+      <td>
+        {produto.produto.descricaoProduto}
+      </td>
+      <td>
+        <input type="number" required></input>
+      </td>
+      <td>
+        {produto.produto.precoVenda}
+      </td>
+      <td>
+        valor total
+      </td>
     </ModalItemPedido>
+    
   )
 }
