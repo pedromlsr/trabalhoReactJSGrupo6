@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext} from "react";
 import { CartItensContext } from "../../../Context/data";
 import { InputButton } from "../../CadastroCliente/style";
 import { ItemPedido } from "../ItemPedido/itemPedido";
@@ -7,20 +7,9 @@ import { api } from "../../../Service/api";
 
 
 export const PostPedido = () => {
-
   const { cartItens } = useContext(CartItensContext)
-
-  console.log(cartItens)
-
-  const [idCliente, setIdCliente] = useState()
-  const [valorLiqTotal, setValorLiqTotal] = useState()
-  const [itemPedidoList, setItemPedidoList] = useState([])
-  const [produto, setProduto] = useState({})
-  const [idProduto, setIdProduto] = useState()
-  const [quantidade, setQuantidade] = useState()
-  const [precoVenda, setPrecoVenda] = useState()
-
-  const pedido = {
+  
+  let pedido = {
     idCliente: 6,
     valorLiqTotal: 0.0,
     itemPedidoList: [

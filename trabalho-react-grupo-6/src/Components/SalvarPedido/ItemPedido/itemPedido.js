@@ -1,17 +1,14 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext} from "react";
 import { ModalItemPedido } from "./style";
 import { CartItensContext } from "../../../Context/data";
 
 export const ItemPedido = ({ produto }) => {
   const [quantidade, setQuantidade] = useState(1)
   const { cartItens } = useContext(CartItensContext)
-
- 
-
-  function excluir(exclusao){
-  cartItens.splice(cartItens.findIndex(produto=> produto.idProduto===exclusao.idProduto),1)
-   }
-
+  
+  function excluir(exclusao) {
+    cartItens.splice(cartItens.findIndex(produto => produto.idProduto === exclusao.idProduto), 1)
+  }
 
   return (
     <ModalItemPedido>
@@ -38,7 +35,7 @@ export const ItemPedido = ({ produto }) => {
 
       </td>
       <td>
-        <button onClick={()=>excluir(produto)}>Excluir</button>
+        <button onClick={() => excluir(produto)}>Excluir</button>
       </td>
     </ModalItemPedido>
 
