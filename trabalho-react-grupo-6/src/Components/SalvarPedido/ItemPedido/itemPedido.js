@@ -4,16 +4,15 @@ import { CartItensContext } from "../../../Context/data";
 
 export const ItemPedido = ({ produto }) => {
   const [quantidade, setQuantidade] = useState(1)
-  const { cartItens,valorTotal } = useContext(CartItensContext)
+  const { cartItens,valorTotal} = useContext(CartItensContext)
   
   function excluir(exclusao) {
     cartItens.splice(cartItens.findIndex(produto => produto.idProduto === exclusao.idProduto), 1)
   }
   
   produto.quantidade=quantidade  
-  valorTotal(cartItens)
-  
-  
+   valorTotal(cartItens)  
+     
   return (
     <ModalItemPedido>
       <td>

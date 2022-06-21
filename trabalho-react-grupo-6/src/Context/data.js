@@ -13,8 +13,8 @@ const CartItensProvider = (props) => {
         setCartItens([...cartItens, produto])
     }    
 
-    function valorTotal(cartItens){
-    cartItens.map((item)=>(
+    function valorTotal(value){
+    value.map((item)=>(
        setValorTotal(item.quantidade*item.valorUnitario)
     ))
     }
