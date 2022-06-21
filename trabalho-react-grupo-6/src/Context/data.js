@@ -8,6 +8,7 @@ const CartItensProvider = (props) => {
     const [cartItens, setCartItens] = useState([]);
 
     function addItem(produto) {
+        if(!cartItens.includes(produto))
         setCartItens([...cartItens, produto])
     }    
 
