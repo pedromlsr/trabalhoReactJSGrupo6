@@ -1,13 +1,13 @@
 import { useState } from "react";
-import { apiCategoria } from "../../Service/api-categoria";
-import { apiProduto } from "../../Service/api-produto";
+import LogoImg from "../../Assets/Img/logo-cor.png";
 import { FormCat } from "../../Components/FormularioCategoria/FormCat";
 import { FormProd } from "../../Components/FormularioProduto/FormProd";
-import { api } from "../../Service/api";
-import { Container, Ul, Li, H4, Div, ContainerExterno, ContainerInterno, Titulo, Complemento, Logo, Input, InputButton, Formulario, ContainerOrganizacao, Label, Text } from "./style";
 import { NavBar } from "../../Components/Navbar/navbar";
-
-import LogoImg from "../../Assets/Img/logo-cor.png";
+import { api } from "../../Service/api";
+import { apiCategoria } from "../../Service/api-categoria";
+import { apiProduto } from "../../Service/api-produto";
+import FormData from 'form-data'
+import { Container, Ul, Li, H4, Div, ContainerExterno, ContainerInterno, Titulo, Complemento, Logo, Input, InputButton, Formulario, ContainerOrganizacao, Label, Text } from "./style";
 
 export const AreaInterna = () => {
   const [request, setRequest] = useState("");
@@ -30,6 +30,7 @@ export const AreaInterna = () => {
   const [descricaoProduto, setDescricaoProduto] = useState("");
   const [qtdEstoque, setQtdEstoque] = useState("");
   const [valorUnitario, setValorUnitario] = useState("");
+  const [imagemProduto, setImagemProduto] = useState("");
 
   const [pedido, setPedido] = useState({});
   const [pedidos, setPedidos] = useState([]);
@@ -172,7 +173,22 @@ export const AreaInterna = () => {
         valorUnitario,
         idCategoria,
       };
-      apiProduto.saveProduto(produto);
+      // apiProduto.saveProduto(produto);
+      const formData = new FormData()
+      formData.append('produto', produto)
+      formData.append('file', imagemProduto)
+      try {
+         await api.post('produto/com-foto', formData, {
+            headers: {
+               'accept': 'application/json',
+               'Content-Type': 'multipart/format-data'
+            }
+         })
+         alert('Produto cadastrado com sucesso!')
+      } catch (error) {
+         console.log(error);
+         alert(error.response.data.message + ' ' + error.response.data.details)
+      }
     }
 
     if (request === "updateProduto") {
@@ -187,6 +203,11 @@ export const AreaInterna = () => {
       apiProduto.updateProduto(produtoUpdate);
     }
   };
+
+   const handleImageSelect = (e) => {
+      console.log(e.target.files[0]);
+      setImagemProduto(e.target.files[0])
+  }
 
   const respostaRequest = (request) => {
     if (request === "findAllClientes") {
@@ -446,11 +467,13 @@ export const AreaInterna = () => {
           qtdEstoque={qtdEstoque}
           valorUnitario={valorUnitario}
           idCategoria={idCategoria}
+          imagemProd={imagemProduto}
           definirNomeProd={setNomeProduto}
           definirDescProd={setDescricaoProduto}
           definirQtdEst={setQtdEstoque}
           definirValorUni={setValorUnitario}
           definirIdCat={setIdCategoria}
+          definirImgProd={handleImageSelect}
           textoButton="Adicionar Produto"
         />
       );
