@@ -6,19 +6,19 @@ export const ItemPedido = ({ produto }) => {
   return (
     <ModalItemPedido>
       <td>
-        {produto.produto.nomeProduto}
+        {produto.nomeProduto}
       </td>
       <td>
-        {produto.produto.descricaoProduto}
+        {produto.descricaoProduto}
       </td>
       <td>
-        <input type="number" value={quantidade} onChange={(e) => setQuantidade(e.target.value)} min={0}></input>
+        <input type="number" value={quantidade} onChange={(e) => setQuantidade(e.target.value)} min={0} max={produto.qtdEstoque}></input>
       </td>
       <td>
-        {produto.precoVenda}
+        {produto.valorUnitario}
       </td>
       <td>
-        {quantidade * produto.precoVenda}
+        {quantidade * produto.valorUnitario}
       </td>
     </ModalItemPedido>
 

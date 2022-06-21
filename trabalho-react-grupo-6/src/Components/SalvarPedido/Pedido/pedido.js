@@ -10,6 +10,8 @@ export const PostPedido = () => {
 
   const { cartItens } = useContext(CartItensContext)
 
+  console.log(cartItens)
+
   const [idCliente, setIdCliente] = useState()
   const [valorLiqTotal, setValorLiqTotal] = useState()
   const [itemPedidoList, setItemPedidoList] = useState([])
@@ -72,7 +74,7 @@ export const PostPedido = () => {
             <Titulo> Valor Unitário:</Titulo>
             <Titulo> Valor Total:</Titulo>
           </tr>
-          {pedido?.itemPedidoList.map((item) => (
+          {cartItens?.map((item) => (
             <ItemPedido produto={item} />
           ))}
           <Total>Total:</Total>
