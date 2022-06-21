@@ -14,11 +14,10 @@ export const PostPedido = () => {
     let total = 0;
     cartItens?.map((item) => (
       total += item.quantidade * item.valorUnitario
-    )
-    )
+      )
+      )
     return (total)
   }
-
   const finishBuy = (cartItens) => {
     try {
       const itemPedidoList = []
